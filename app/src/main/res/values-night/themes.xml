@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Gamer" parent="Theme.Material3.DayNight.NoActionBar">
+
+
+
+        <!--  <item name="backgroundColor">@color/colorSecondary</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:drawableTint">@color/white</item>
+        <item name="android:drawableRight">@color/Primary</item>
+        <item name="">@color/white</item>
+        <item name="android:textColor">@color/white</item>   -->
+
+
+
+
+    </style>
+</resources>
