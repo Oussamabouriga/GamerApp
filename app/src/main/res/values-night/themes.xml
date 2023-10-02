@@ -5,6 +5,7 @@
 
 
         <!--  <item name="backgroundColor">@color/colorSecondary</item>
+
         <item name="android:textColorHint">@color/white</item>
         <item name="android:drawableTint">@color/white</item>
         <item name="android:drawableRight">@color/Primary</item>
