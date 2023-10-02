@@ -1,10 +1,12 @@
 package tn.esprit.gamer
 
+import android.content.Intent
 import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import com.google.android.material.snackbar.Snackbar
 import tn.esprit.gamer.databinding.ActivityForgetPasswordBinding
 
 class ForgetPasswordActivity : AppCompatActivity() {
@@ -46,6 +48,13 @@ class ForgetPasswordActivity : AppCompatActivity() {
                 }
         })
 
+        binding.submitForgetPass.setOnClickListener {
+            submitEmail()
+        }
+        binding.sendSms.setOnClickListener {
+            smsNumber()
+        }
+
 
     }
 
@@ -82,6 +91,33 @@ class ForgetPasswordActivity : AppCompatActivity() {
                 return false
             }
         }
+
+    private fun submitEmail() {
+        val textF = binding.forgetPassMailNumber.text.toString()
+        if (emailValidate(textF) && (!isItInt(textF))) {
+            val intent = Intent(this, OptValidationActivity::class.java)
+            intent.putExtra("code", 1234)
+            startActivity(intent)
+        } else {
+            Snackbar.make(
+                binding.root,
+                "you have some errors in your inputs!",
+                Snackbar.LENGTH_LONG
+            ).show()
+        }
+    }
+      private  fun smsNumber(){
+            val textF = binding.forgetPassMailNumber.text.toString()
+            if (phoneValidate(textF) && isItInt(textF)){
+                val intent = Intent(this, OptValidationActivity::class.java)
+                intent.putExtra("code",6789)
+                startActivity(intent)
+            }else{
+                Snackbar.make(binding.root,"you have some errors in your inputs!", Snackbar.LENGTH_LONG).show()
+            }
+
+
+    }
 
 
 
